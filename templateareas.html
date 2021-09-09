@@ -9,28 +9,43 @@
       }
 
       .container {
+        display: grid;
+        grid-template-areas: "header" "sidebar" "main" "footer";
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-gap: 5px;
+        height: 100vh;
       }
 
       .item {
       }
 
       .item-a {
-        color: blueviolet;
+        background-color: blueviolet;
+        grid-area: header;
       }
 
       .item-b {
-        color: blue;
+        background-color: blue;
+        grid-area: sidebar;
       }
 
       .item-c {
-        color: purple;
+        background-color: purple;
+        grid-area: main;
       }
 
       .item-d {
-        color: pink;
+        background-color: pink;
+        grid-area: footer;
       }
 
       @media screen and (min-width: 768px) {
+        .container {
+          grid-template-areas:
+            "header header header"
+            "sidebar main main"
+            "footer footer footer";
+        }
       }
     </style>
   </head>
